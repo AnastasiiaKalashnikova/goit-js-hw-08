@@ -11,6 +11,7 @@ populateForm()
 function onInput(evt) {
     const { email, message } = (evt.target.closest('.feedback-form')).elements;
 
+    console.log(email, message)
     //для зберігання вмісту полів
     const data = {
         email: email.value.trim(),
