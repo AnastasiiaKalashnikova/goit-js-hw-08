@@ -9,8 +9,7 @@ const player = new Player(iframe);
 //збереження часу
 player.on('timeupdate', throttle(handler, 1000));
 function handler(timeupdate) {
-    console.log(timeupdate.seconds)
     return localStorage.setItem("videoplayer-current-time", JSON.stringify(timeupdate.seconds))
 }
 
-player.setCurrentTime(JSON.parse(localStorage.getItem("videoplayer-current-time")))
+player.setCurrentTime(JSON.parse(localStorage.getItem("videoplayer-current-time"))|| 0)
